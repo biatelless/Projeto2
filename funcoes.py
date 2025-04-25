@@ -20,3 +20,34 @@ def remover_dado(dados, guardados, i):
     dados.append(guardados[i])
     del guardados[i]
     return [dados, guardados]
+
+
+
+def calcula_pontos_regra_simples(dados):
+    dicionario={}
+    soma1=0
+    soma2=0
+    soma3=0
+    soma4=0
+    soma5=0
+    soma6=0
+    for i in range(len(dados)):
+        if dados[i]==1:
+            soma1+=1
+        elif dados[i]==2:
+            soma2+=2
+        elif dados[i]==3:
+            soma3+=3
+        elif dados[i]==4:
+            soma4+=4
+        elif dados[i]==5:
+            soma5+=5
+        elif dados[i]==6:
+            soma6+=6
+    dicionario[1]=soma1
+    dicionario[2]=soma2
+    dicionario[3]=soma3
+    dicionario[4]=soma4
+    dicionario[5]=soma5
+    dicionario[6]=soma6
+    return dicionario
