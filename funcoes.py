@@ -16,4 +16,7 @@ def guardar_dado(dados, guardados, i):
     del dados[i]
     return [dados, guardados]
 
-    
+def remover_dado(dados, guardados, i):
+    dados.append(guardados[i])
+    del guardados[i]
+    return [dados, guardados]
