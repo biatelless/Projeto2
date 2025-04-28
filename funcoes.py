@@ -51,3 +51,12 @@ def calcula_pontos_regra_simples(dados):
     dicionario[5]=soma5
     dicionario[6]=soma6
     return dicionario
+
+
+def calcula_pontos_soma (dados):
+    i = 0 
+    soma = 0
+    while i<len(dados):
+        soma = soma + dados[i]
+        i = i + 1 
+    return soma 
