@@ -69,6 +69,8 @@ def calcula_pontos_sequencia_baixa(dados):
             sequencia+=1
         else:
             sequencia=0
+        if sequencia==4:
+            break
     if sequencia==4:
         return 15
     else:
