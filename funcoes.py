@@ -99,3 +99,25 @@ def calcula_pontos_full_house(dados):
         return 0
     else:
         return soma
+
+
+def calcula_pontos_quadra(dados):
+    i = 0 
+    quantidade = 0
+    while i<len(dados):
+        o = 0
+        iguais = 0
+        while o<len(dados):
+            if dados[i] == dados[o]:
+                iguais = iguais + 1 
+            o = o + 1
+        if iguais >= 4:
+            quantidade = iguais 
+        i = i + 1 
+    if quantidade >= 4: 
+        soma = 0
+        for i in range(len(dados)):
+            soma = soma + dados[i]
+        return soma 
+    else: 
+        return 0
