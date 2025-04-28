@@ -80,3 +80,22 @@ def calcula_pontos_sequencia_alta(dados):
         return 30 
     else: 
         return 0
+    
+
+def calcula_pontos_full_house(dados):
+    contador=0
+    ocorrencias=[]
+    soma=0
+    for i in range(len(dados)):
+        if dados[i] in ocorrencias:
+            contador = contador
+        else:
+            contador+=1 
+            ocorrencias.append(dados[i])
+        soma+=dados[i]
+    if contador>2:
+        return 0
+    if dados[0]==dados[1]==dados[2]==dados[3]==dados[4] or dados[0]==dados[1]==dados[2]==dados[3] or dados[0]==dados[1]==dados[2]==dados[4] or dados[0]==dados[1]==dados[3]==dados[4] or dados[0]==dados[2]==dados[3]==dados[4] or dados[1]==dados[2]==dados[3]==dados[4]:
+        return 0
+    else:
+        return soma
