@@ -60,3 +60,16 @@ def calcula_pontos_soma (dados):
         soma = soma + dados[i]
         i = i + 1 
     return soma 
+
+
+def calcula_pontos_sequencia_baixa(dados):
+    sequencia=0
+    for i in range(len(dados)):
+        if int(dados[i]+1) in dados:
+            sequencia+=1
+        else:
+            sequencia=0
+    if sequencia==4:
+        return 15
+    else:
+        return 0
