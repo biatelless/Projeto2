@@ -152,3 +152,16 @@ def calcula_pontos_regra_avancada(dados):
     dic["sequencia_alta"] = calcula_pontos_sequencia_alta(dados)
     dic["sequencia_baixa"] = calcula_pontos_sequencia_baixa(dados)
     return dic 
+
+
+def faz_jogada(dados, categoria, cartela):
+    if categoria in cartela['regra_avancada']:
+        dicavancado=calcula_pontos_regra_avancada(dados)
+        pontosavancada=dicavancado[categoria]
+        cartela['regra_avancada'][categoria]=pontosavancada
+    elif categoria=='1' or categoria=='2' or categoria=='3' or categoria=='4' or categoria=='5' or categoria=='6':
+        categoria=int(categoria)
+        dicsimples=calcula_pontos_regra_simples(dados)
+        pontossimples=dicsimples[categoria]
+        cartela['regra_simples'][categoria]=pontossimples
+    return cartela
