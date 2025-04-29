@@ -83,6 +83,8 @@ def calcula_pontos_sequencia_alta(dados):
     
 
 def calcula_pontos_full_house(dados):
+    if len(dados) != 5: 
+        return 0
     contador=0
     ocorrencias=[]
     soma=0
