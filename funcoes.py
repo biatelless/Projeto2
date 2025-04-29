@@ -121,3 +121,23 @@ def calcula_pontos_quadra(dados):
         return soma 
     else: 
         return 0
+
+
+
+def calcula_pontos_quina(dados):
+    i = 0 
+    quantidade = 0
+    while i<len(dados):
+        o = 0
+        iguais = 0
+        while o<len(dados):
+            if dados[i] == dados[o]:
+                iguais = iguais + 1 
+            o = o + 1
+        if iguais >= 5:
+            quantidade = iguais 
+        i = i + 1 
+    if quantidade >= 5:
+        return 50 
+    else: 
+        return 0
