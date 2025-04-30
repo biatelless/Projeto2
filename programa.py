@@ -35,13 +35,12 @@ while jogada<12:
         while acao != "0" and acao != "1" and acao != "2" and acao != "3" and acao != "4": 
             print("Opção inválida.Tente novamente.")
             acao = (input(">"))
-            
+
         if acao == "0":
             print("Digite a combinação desejada:")
             combinacao = input(">")
             if combinacao == "1" or combinacao == "2" or combinacao == "3" or combinacao == "4" or combinacao == "5"or combinacao == "6": 
-                combinacao = int(combinacao)
-                if cartela_de_pontos["regra_simples"][combinacao] != -1: 
+                if cartela_de_pontos["regra_simples"][int(combinacao)] != -1: 
                     print("Essa combinação já foi utilizada.")
                     combinacao = input(">")
                 else:
