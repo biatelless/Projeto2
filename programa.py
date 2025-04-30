@@ -67,9 +67,10 @@ while jogada<12:
         elif acao == "2": 
             print("Digite o índice do dado a ser removido (0 a 4):")
             r = int(input(">"))
-            lista = funcoes.remover_dado(dados,guardados,r)
-            dados = lista[0]
-            guardados = lista[1]
+            if r<len(guardados):
+                lista = funcoes.remover_dado(dados,guardados,r)
+                dados = lista[0]
+                guardados = lista[1]
             
         elif acao == "3": 
             if rolar_novamente>=2: 
