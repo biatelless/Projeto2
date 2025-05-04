@@ -37,33 +37,34 @@ while jogada<12:
             acao = (input(">"))
 
         if acao == "0":
+            print("Digite a combinação desejada:")
             while jogando:
-                print("Digite a combinação desejada:")
                 combinacao = input(">")
                 if combinacao == "1" or combinacao == "2" or combinacao == "3" or combinacao == "4" or combinacao == "5"or combinacao == "6": 
                     if cartela_de_pontos["regra_simples"][int(combinacao)] != -1: 
                         print("Essa combinação já foi utilizada.")
-                        combinacao = input(">")
+
                     else:
                         cartela_de_pontos = funcoes.faz_jogada(guardados,combinacao,cartela_de_pontos)
                         jogando = False
                 elif combinacao == "sem_combinacao" or combinacao == "quadra" or combinacao == "full_house" or combinacao == "sequencia_baixa" or combinacao == "sequencia_alta" or combinacao == "cinco_iguais":
                     if cartela_de_pontos["regra_avancada"][combinacao] != -1: 
                         print("Essa combinação já foi utilizada.")
-                        combinacao = input(">")
+
                     else: 
                         cartela_de_pontos = funcoes.faz_jogada(guardados,combinacao,cartela_de_pontos)
                         jogando = False
                 else:
                     print("Combinação inválida.Tente novamente.")
-                    combinacao = (input(">"))
+
 
         elif acao == "1": 
             print("Digite o índice do dado a ser guardado (0 a 4):")
             g = int(input(">"))
-            lista = funcoes.guardar_dado(dados,guardados,g)
-            dados = lista[0]
-            guardados = lista[1]
+            if g<len(dados):
+                lista = funcoes.guardar_dado(dados,guardados,g)
+                dados = lista[0]
+                guardados = lista[1]
             
         elif acao == "2": 
             print("Digite o índice do dado a ser removido (0 a 4):")
@@ -72,6 +73,7 @@ while jogada<12:
                 lista = funcoes.remover_dado(dados,guardados,r)
                 dados = lista[0]
                 guardados = lista[1]
+
             
         elif acao == "3": 
             if rolar_novamente>=2: 
