@@ -33,7 +33,7 @@ while jogada<12:
         acao = (input(">"))
 
         while acao != "0" and acao != "1" and acao != "2" and acao != "3" and acao != "4": 
-            print("Opção inválida.Tente novamente.")
+            print("Opção inválida. Tente novamente.")
             acao = (input(">"))
 
         if acao == "0":
@@ -45,17 +45,19 @@ while jogada<12:
                         print("Essa combinação já foi utilizada.")
 
                     else:
-                        cartela_de_pontos = funcoes.faz_jogada(guardados,combinacao,cartela_de_pontos)
+                        lista_jogada=guardados+dados
+                        cartela_de_pontos = funcoes.faz_jogada(lista_jogada,combinacao,cartela_de_pontos)
                         jogando = False
                 elif combinacao == "sem_combinacao" or combinacao == "quadra" or combinacao == "full_house" or combinacao == "sequencia_baixa" or combinacao == "sequencia_alta" or combinacao == "cinco_iguais":
                     if cartela_de_pontos["regra_avancada"][combinacao] != -1: 
                         print("Essa combinação já foi utilizada.")
 
                     else: 
-                        cartela_de_pontos = funcoes.faz_jogada(guardados,combinacao,cartela_de_pontos)
+                        lista_jogada=guardados+dados
+                        cartela_de_pontos = funcoes.faz_jogada(lista_jogada,combinacao,cartela_de_pontos)
                         jogando = False
                 else:
-                    print("Combinação inválida.Tente novamente.")
+                    print("Combinação inválida. Tente novamente.")
 
 
         elif acao == "1": 
